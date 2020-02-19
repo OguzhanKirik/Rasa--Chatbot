@@ -1,0 +1,84 @@
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- thanks
+- search_profile:
+    triggers: action_ask_profile
+- mail_provider:
+    triggers: action_provide_mail
+- address_provider:
+    triggers: action_provide_address
+- samegender_provider:
+    triggers: action_provide_same_gender
+- birtdate_provider:
+    triggers: action_provide_birthdate
+- out_of_scope
+- age_query:
+    triggers: action_make_age_query
+- opening hours
+- day_specification
+- opening_hours
+- birthdate_provider
+- birhtday_provider
+entities:
+- name
+- gender
+- age
+- gauge
+- date
+- birhtdate
+- time
+slots:
+  date:
+    type: unfeaturized
+  exhibition:
+    type: unfeaturized
+  time:
+    type: unfeaturized
+templates:
+  utter_did_that_help:
+  - text: Did that help you?
+  - text: Was it helpful?
+  utter_goodbye:
+  - text: Bye
+  - text: Take care!
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_how_can_i_help:
+  - text: Hello, how can I help you?
+  - text: Hi, my name is rasa. How can I help you?
+  utter_anything_else:
+  - text: Is there anything else?
+  - text: Anything else that I can do?
+  utter_ask_day:
+  - text: Sure, when would you like to come to ZKM?
+  - text: yes, on which day would u like to come?
+  utter_which_exhibition:
+  - text: which exhibition would you like to visit?
+    buttons:
+    - title: writing the history of future
+      payload: '/choose{"exhibition": "writing the history of future"}'
+    - title: Peter Weibel
+      payload: '/choose{"exhibition": "Peter Weibel"}'
+actions:
+- utter_did_that_help
+- utter_goodbye
+- utter_iamabot
+- utter_anything_else
+- action_ask_profile
+- utter_how_can_i_help
+- action_provide_address
+- action_provide_birthdate
+- action_provide_mail
+- action_provide_same_gender
+- action_make_age_query
+- utter_which_exhibition
+- utter_ask_day
+- utter_goodbye_
+forms:
+- opening_exhibition
